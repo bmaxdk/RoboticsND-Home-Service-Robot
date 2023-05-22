@@ -20,3 +20,7 @@ xterm  -e  " rosrun rviz rviz"
 Here, in the `launch.sh` shell script launches three terminals and issues one or multiple commands in each terminal. To save my script file and give it ***execute*** permission: `chmod +x launch.sh`. Then to launch the shell: `./launch.sh`
 
 # Simulation Set Up
+
+
+#
+[rtabmap_ros](http://wiki.ros.org/rtabmap_ros) package for simultaneous localization and mapping (SLAM)
