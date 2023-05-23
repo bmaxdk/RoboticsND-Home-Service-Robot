@@ -43,7 +43,8 @@ $ cd src/script
 $ ./test_navigation.sh
 ```
 
-**Robot Position Updated** in [amcl_demo.launch](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/turtlebot_simulator/turtlebot_gazebo/launch/amcl_demo.launch) to correct map where you can find in 'localization' section
+**Robot Position Updated** in [amcl_demo.launch](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/turtlebot_simulator/turtlebot_gazebo/launch/amcl_demo.launch) to correct map where you can find in 'localization' section.
+* More detalils about creating Map
 
 # Navigation Goal Node
 ## Sending Goals to the Navigation Stack
