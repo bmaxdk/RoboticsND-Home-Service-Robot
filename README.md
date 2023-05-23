@@ -37,5 +37,6 @@ Here, in the `launch.sh` shell script launches three terminals and issues one or
 
 # Navigation Goal Node
 ## Sending Goals to the Navigation Stack
-[Tutorial](http://wiki.ros.org/navigation/Tutorials/SendingSimpleGoals)
+The ROS navigation stack creates a path for your robot based on `Dijkstra's algorithm`, a variant of the **Uniform Cost Search algorithm**, while avoiding obstacles on its path.
+[Tutorial](http://wiki.ros.org/navigation/Tutorials/SendingSimpleGoals): Official ROS tutorial that teaches you how to send a single goal position and orientation to the navigation stack.
 
