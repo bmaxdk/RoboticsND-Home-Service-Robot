@@ -24,3 +24,6 @@ Here, in the `launch.sh` shell script launches three terminals and issues one or
 
 #
 [rtabmap_ros](http://wiki.ros.org/rtabmap_ros) package for simultaneous localization and mapping (SLAM)
+
+
+[image1]: https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/img/Nav3.gif "Localization and Navigation Testing"
