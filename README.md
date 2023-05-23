@@ -35,3 +35,7 @@ Here, in the `launch.sh` shell script launches three terminals and issues one or
 
 <!-- [image2]: https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/img/a.gif "Localization and Navigation Testing2" -->
 
+# Navigation Goal Node
+## Sending Goals to the Navigation Stack
+[Tutorial](http://wiki.ros.org/navigation/Tutorials/SendingSimpleGoals)
+
