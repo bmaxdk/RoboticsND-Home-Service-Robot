@@ -22,9 +22,13 @@ Here, in the `launch.sh` shell script launches three terminals and issues one or
 # Simulation Set Up
 
 
-#
-[rtabmap_ros](http://wiki.ros.org/rtabmap_ros) package for simultaneous localization and mapping (SLAM)
-
+# Localization and Navigation Testing
+RTAB-Map is SLAM algorithm that can be used to create a map of an environment. [rtabmap_ros](http://wiki.ros.org/rtabmap_ros) package for simultaneous localization and mapping (SLAM) has some advantages over the gmapping package, such as the ability to create 3D maps and handle loop closures more effectively. However, it also requires more computational resources and may be more difficult to set up.
+```bash
+$ source devel/setup.bash
+$ cd src/script
+$ ./test_navigation.sh
+```
 
 ![Localization and Navigation Testing][image1]
 <!-- ![Localization and Navigation Testing2][image2] -->
@@ -39,4 +43,50 @@ Here, in the `launch.sh` shell script launches three terminals and issues one or
 ## Sending Goals to the Navigation Stack
 The ROS navigation stack creates a path for your robot based on `Dijkstra's algorithm`, a variant of the **Uniform Cost Search algorithm**, while avoiding obstacles on its path.
 [Tutorial](http://wiki.ros.org/navigation/Tutorials/SendingSimpleGoals): Official ROS tutorial that teaches you how to send a single goal position and orientation to the navigation stack.
+**Sample Code**
+```cpp
+#include <ros/ros.h>
+#include <move_base_msgs/MoveBaseAction.h>
+#include <actionlib/client/simple_action_client.h>
+ 
+// Define a client for to send goal requests to the move_base server through a SimpleActionClient
+typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;
 
+int main(int argc, char** argv){
+  // Initialize the simple_navigation_goals node
+  ros::init(argc, argv, "simple_navigation_goals");
+
+  //tell the action client that we want to spin a thread by default
+  MoveBaseClient ac("move_base", true);
+
+  // Wait 5 sec for move_base action server to come up
+  while(!ac.waitForServer(ros::Duration(5.0))){
+    ROS_INFO("Waiting for the move_base action server to come up");
+  }
+
+  move_base_msgs::MoveBaseGoal goal;
+
+  // set up the frame parameters
+  goal.target_pose.header.frame_id = "base_link";
+  goal.target_pose.header.stamp = ros::Time::now();
+  
+  // Define a position and orientation for the robot to reach
+  goal.target_pose.pose.position.x = 1.0;
+  goal.target_pose.pose.orientation.w = 1.0;
+
+   // Send the goal position and orientation for the robot to reach
+  ROS_INFO("Sending goal");
+  ac.sendGoal(goal);
+  
+  // Wait an infinite time for the results
+  ac.waitForResult();
+  
+  // Check if the robot reached its goal
+  if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
+    ROS_INFO("Hooray, the base moved 1 meter forward");
+  else
+    ROS_INFO("The base failed to move forward 1 meter for some reason");
+
+  return 0;
+}
+```
