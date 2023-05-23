@@ -36,7 +36,14 @@ Use `keyboard_teleop` node to map the world.
 [image1]: https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/img/Nav3.gif "Localization and Navigation Testing"
 <!-- [image2]: https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/img/a.gif "Localization and Navigation Testing2" -->
 
-RTAB-Map is SLAM algorithm that can be used to create a map of an environment. [rtabmap_ros](http://wiki.ros.org/rtabmap_ros) package for simultaneous localization and mapping (SLAM) has some advantages over the gmapping package, such as the ability to create 3D maps and handle loop closures more effectively. However, it also requires more computational resources and may be more difficult to set up.
+RTAB-Map is SLAM algorithm that can be used to create a map of an environment. [rtabmap_ros](http://wiki.ros.org/rtabmap_ros) package for simultaneous localization and mapping (SLAM) has some advantages over the gmapping package, such as the ability to create 3D maps and handle loop closures more effectively.
+
+To save the RTAM-Map 2D or 3D:
+* Open the database: Run RTAB-Map standalone application (just type rtabmap in your terminal). Once the GUI is open, click on "File" -> "Open" in the top menu and select your map.db file.
+* Export the 2D map: Go to "File" -> "Export 2D grid map..." and a dialogue window will open. In this window, you can adjust parameters such as the resolution of your map. Click "OK" and then you will be asked to specify the path and name of the output file. You can save the map as .png or .pgm, with an accompanying .yaml file for map metadata.
+* Export the 3D map: If you want to export a 3D map (if you've been mapping in 3D), go to "File" -> "Export 3D cloud..." or "File" -> "Export 3D mesh...". This will allow you to save the 3D map in various formats (like .pcd, .ply, .vtk, etc.).
+
+To run:
 ```bash
 $ source devel/setup.bash
 $ cd src/script
