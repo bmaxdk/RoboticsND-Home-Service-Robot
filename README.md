@@ -19,8 +19,13 @@ xterm  -e  " rosrun rviz rviz"
 ```
 Here, in the `launch.sh` shell script launches three terminals and issues one or multiple commands in each terminal. To save my script file and give it ***execute*** permission: `chmod +x launch.sh`. Then to launch the shell: `./launch.sh`
 
-# Simulation Set Up
-
+# SLAM Testing
+shell script `test_slam.sh` that will deploy a turtlebot inside your environment, control it with keyboard commands, interface it with a SLAM package, and visualize the map in `rviz`.
+```bash
+$ source devel/setup.bash
+$ cd src/script
+$ ./test_slam.sh
+```
 
 # Localization and Navigation Testing
 RTAB-Map is SLAM algorithm that can be used to create a map of an environment. [rtabmap_ros](http://wiki.ros.org/rtabmap_ros) package for simultaneous localization and mapping (SLAM) has some advantages over the gmapping package, such as the ability to create 3D maps and handle loop closures more effectively. However, it also requires more computational resources and may be more difficult to set up.
