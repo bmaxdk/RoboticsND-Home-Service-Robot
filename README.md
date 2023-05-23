@@ -29,6 +29,13 @@ $ ./test_slam.sh
 Use `keyboard_teleop` node to map the world.
 
 # Localization and Navigation Testing
+![Localization and Navigation Testing][image1]
+<!-- ![Localization and Navigation Testing2][image2] -->
+
+[//]: # (Image References)
+[image1]: https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/img/Nav3.gif "Localization and Navigation Testing"
+<!-- [image2]: https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/img/a.gif "Localization and Navigation Testing2" -->
+
 RTAB-Map is SLAM algorithm that can be used to create a map of an environment. [rtabmap_ros](http://wiki.ros.org/rtabmap_ros) package for simultaneous localization and mapping (SLAM) has some advantages over the gmapping package, such as the ability to create 3D maps and handle loop closures more effectively. However, it also requires more computational resources and may be more difficult to set up.
 ```bash
 $ source devel/setup.bash
@@ -36,14 +43,7 @@ $ cd src/script
 $ ./test_navigation.sh
 ```
 
-![Localization and Navigation Testing][image1]
-<!-- ![Localization and Navigation Testing2][image2] -->
-
-
-[//]: # (Image References)
-[image1]: https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/img/Nav3.gif "Localization and Navigation Testing"
-
-<!-- [image2]: https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/img/a.gif "Localization and Navigation Testing2" -->
+**Robot Position Updated** in [amcl_demo.launch](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/turtlebot_simulator/turtlebot_gazebo/launch/amcl_demo.launch) to correct map where you can find in 'localization' section
 
 # Navigation Goal Node
 ## Sending Goals to the Navigation Stack
