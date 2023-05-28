@@ -16,20 +16,27 @@ public:
     MoveBaseSequence() : ac_("move_base", true), count(0) 
     {
         // Setting up my waypoints
-        waypoints_ = {{5.0, -6.0}, {12.0, -2.0}, {0.0, 0.0}};
+        waypoints = {{5.0, -6.0}, {12.0, -2.0}, {0.0, 0.0}};
         station_map = {{0, "First Waypoint"}, {1, "Second Waypoint"}, {2, "Third Waypoint"}};
         // station_map[0] = "First Waypoint";
         // station_map[1] = "Second Waypoint";
         // station_map[2] = "Third Waypoint";
-        
+
         // Wait 5 sec for move_base action server to come up
-        while(!ac_.waitForServer(ros::Duration(5.0))) 
-            ROS_INFO("Waiting for the move_base action server to come up");
+        // while(!ac_.waitForServer(ros::Duration(5.0))) 
+        //     ROS_INFO("Waiting for the move_base action server to come up");
+        ROS_INFO("Waypoints will be: \n");
+        int i = 0;
+        for (auto &wp : waypoints)
+            ROS_INFO("[%s] (x, y) = (%f, %f)\n", station_map[i++].c_str(), wp[0], wp[1]);
+
+        ROS_INFO("Waiting for the move_base action server to come up");
+        ros::Duration(5.0).sleep();
     }
 
     void moveToWaypoints() 
     {
-        for(auto &wp : waypoints_) 
+        for(auto &wp : waypoints) 
         {
             move_base_msgs::MoveBaseGoal goal;
 
@@ -43,7 +50,9 @@ public:
             goal.target_pose.pose.orientation.w = 1.0;
 
             // Send the goal position and orientation for the robot to reach
-            ROS_INFO("Sending %s goal ...\n", station_map[count].c_str());
+            ROS_INFO("Wait for 5.0 seconds before sending %s.\n", station_map[count].c_str());
+            ros::Duration(5.0).sleep();
+            ROS_INFO("Now Sending %s goal!\n", station_map[count].c_str());
 
             ac_.sendGoal(goal);
 
@@ -58,10 +67,14 @@ public:
             count++;
         }
     }
+    ~MoveBaseSequence()
+    {
+        ROS_INFO("Completed the task");
+    }
 
 private:
     MoveBaseClient ac_;
-    vector<vector<double>> waypoints_;
+    vector<vector<double>> waypoints;
     map<uint, string> station_map;
     uint count;
 };
