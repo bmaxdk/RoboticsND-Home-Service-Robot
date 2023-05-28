@@ -8,4 +8,7 @@ sleep 6
 xterm -e "cd ${ws} && source devel/setup.bash && roslaunch turtlebot_gazebo amcl_demo.launch map_file:=${ws}/src/map/map.yaml" &
 sleep 6
 
-xterm -e "cd ${ws} && source devel/setup.bash && roslaunch turtlebot_rviz_launchers view_navigation.launch"
+xterm -e "cd ${ws} && source devel/setup.bash && roslaunch turtlebot_rviz_launchers view_navigation.launch" &
+sleep 6
+
+xterm -e "cd ${ws} && source devel/setup.bash && rosrun pick_objects pick_objects"
