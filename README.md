@@ -107,3 +107,9 @@ int main(int argc, char** argv){
   return 0;
 }
 ```
+
+To creat pick_objects package with `move_base_msgs`, `actionlib`, `roscpp`
+
+```bash
+$ catkin_create_pkg pick_objects move_base_msgs actionlib roscpp
+```
