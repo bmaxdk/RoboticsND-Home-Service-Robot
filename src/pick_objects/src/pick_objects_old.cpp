@@ -21,7 +21,7 @@ public:
         // station_map[0] = "First Waypoint";
         // station_map[1] = "Second Waypoint";
         // station_map[2] = "Third Waypoint";
-        
+
         // Wait 5 sec for move_base action server to come up
         while(!ac_.waitForServer(ros::Duration(5.0))) 
             ROS_INFO("Waiting for the move_base action server to come up");
@@ -57,6 +57,10 @@ public:
                 ROS_INFO("The base failed to reach %s for some reason", station_map[count].c_str());
             count++;
         }
+    }
+    ~MoveBaseSequence()
+    {
+        ROS_INFO("Completed the task");
     }
 
 private:
