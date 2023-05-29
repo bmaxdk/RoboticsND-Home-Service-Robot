@@ -36,6 +36,7 @@ Use `keyboard_teleop` node to map the world.
 
 # Localization and Navigation Testing
 ![Localization and Navigation Testing][image1]
+![Navigation Goal][image2]
 <!-- ![Localization and Navigation Testing2][image2] -->
 
 [//]: # (Image References)
@@ -129,3 +130,4 @@ $ ./pick_objects.sh
 * [pick_objects.cpp](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/pick_objects/src/pick_objects.cpp) contains three position and stop every 5 seconds before sending each mission.
 * [pick_objects.sh](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/scripts/pick_objects.sh) shell scripts will show the robot move as shown bottom gif.
 
+[image2]: https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/img/Nav3.gif "Navigation Goal"
