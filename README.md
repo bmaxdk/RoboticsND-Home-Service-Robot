@@ -114,6 +114,7 @@ int main(int argc, char** argv){
   return 0;
 }
 ```
+It is important to edit the `frame_id` to `map`, since your fixed frame is the **map** and not `base_link`
 
 **To creat pick_objects package with `move_base_msgs`, `actionlib`, `roscpp`:**
 ```bash
@@ -131,6 +132,6 @@ $ ./pick_objects.sh
 
 ![Navigation Goal][image2]
 
-<!-- [//]: # (Image References) -->
-
 [image2]: https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/img/Nav3.gif "Navigation Goal"
+
+##
