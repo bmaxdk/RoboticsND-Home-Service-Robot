@@ -3,7 +3,8 @@
 Home Service Robot in Kinetic ROS
 
 
-# Shell Scripts
+
+## Shell Scripts
 A ***shell script*** is a file containing a series of commands and could be executed. Use shell scripts when developing robotic software with different packages to avoid getting harder to track errors and bugs generated from different nodes. After you create a shell script file to launch one or many nodes each in separate terminals, you will have the power to track the output of different nodes and keep the convenience of running a single command to launch all nodes.
 
 Install **xterm**: 
@@ -11,8 +12,9 @@ Install **xterm**:
 $ sudo apt-get install xterm
 ```
 
-## `launch.sh` Script
 Goal here is to launch Gazebo and Rviz in separate instances of terminals.
+
+Sample `launch.sh` Script:
 ```sh
 #!/bin/sh
 xterm  -e  " gazebo " &
