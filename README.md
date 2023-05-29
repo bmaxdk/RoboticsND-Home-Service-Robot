@@ -14,7 +14,7 @@ $ sudo apt-get install xterm
 
 Goal here is to launch Gazebo and Rviz in separate instances of terminals.
 
-Sample `launch.sh` Script:
+Sample [`launch.sh`](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/scripts/launch.sh) Script:
 ```sh
 #!/bin/sh
 xterm  -e  " gazebo " &
@@ -46,27 +46,28 @@ RTAB-Map is SLAM algorithm that can be used to create a map of an environment. [
 
 **To save the RTAM-Map 2D or 3D:**
 ```bash
-$ rtabmap-databaseViewer rtabmap.db
+$ rtabmap-databaseViewer rtabmap.db 
 ```
 * Open the database: Run RTAB-Map standalone application (just type rtabmap in your terminal). Once the GUI is open, click on "File" -> "Open" in the top menu and select your map.db file.
 * Export the 2D map: Go to "File" -> "Export 2D grid map..." and a dialogue window will open. In this window, you can adjust parameters such as the resolution of your map. Click "OK" and then you will be asked to specify the path and name of the output file. You can save the map as .png or .pgm, with an accompanying .yaml file for map metadata.
 * Export the 3D map: If you want to export a 3D map (if you've been mapping in 3D), go to "File" -> "Export 3D cloud..." or "File" -> "Export 3D mesh...". This will allow you to save the 3D map in various formats (like .pcd, .ply, .vtk, etc.).
 
-**To run:**
+**To run test_navigation.sh:**
 ```bash
 $ source devel/setup.bash
 $ cd src/script
 $ ./test_navigation.sh
 ```
 
-**Robot Position Updated** in [amcl_demo.launch](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/turtlebot_simulator/turtlebot_gazebo/launch/amcl_demo.launch) to correct map where you can find in 'localization' section.
-* More detalils about creating Map
+**Robot Position Updated** in [map.yaml](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/map/map.yaml) and [amcl_demo.launch](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/turtlebot_simulator/turtlebot_gazebo/launch/amcl_demo.launch) to correct map where you can find in 'localization' section.
+* In **amcl_demo.launch**, updated the yaw angle.
+* In **map.yaml**, updated the position of the map location.
 
-# Navigation Goal Node
-## Sending Goals to the Navigation Stack
+## Navigation Goal Node
+### Sending Goals to the Navigation Stack
 The ROS navigation stack creates a path for your robot based on `Dijkstra's algorithm`, a variant of the **Uniform Cost Search algorithm**, while avoiding obstacles on its path.
-[Tutorial](http://wiki.ros.org/navigation/Tutorials/SendingSimpleGoals): Official ROS tutorial that teaches you how to send a single goal position and orientation to the navigation stack.
-**Sample Code**
+[Tutorial](http://wiki.ros.org/navigation/Tutorials/SendingSimpleGoals) is official ROS tutorial that teaches you how to send a single goal position and orientation to the navigation stack.
+**Sample Code:**
 ```cpp
 #include <ros/ros.h>
 #include <move_base_msgs/MoveBaseAction.h>
@@ -114,9 +115,17 @@ int main(int argc, char** argv){
 }
 ```
 
-To creat pick_objects package with `move_base_msgs`, `actionlib`, `roscpp`
-
+**To creat pick_objects package with `move_base_msgs`, `actionlib`, `roscpp`:**
 ```bash
 $ catkin_create_pkg pick_objects move_base_msgs actionlib roscpp
 ```
+
+**To launch pick up object shell scripts:**
+```bash
+$ source devel/setup.bash
+$ cd src/script
+$ ./pick_objects.sh
+```
+* [pick_objects.cpp](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/pick_objects/src/pick_objects.cpp) contains three position and stop every 5 seconds before sending each mission.
+* [pick_objects.sh](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/scripts/pick_objects.sh) shell scripts will show the robot move as shown bottom gif.
 
