@@ -32,7 +32,7 @@ $ ./test_slam.sh
 ```
 Use `keyboard_teleop` node to map the world.
 
-# Localization and Navigation Testing
+## Localization and Navigation Testing
 ![Localization and Navigation Testing][image1]
 <!-- ![Localization and Navigation Testing2][image2] -->
 
@@ -63,7 +63,7 @@ $ ./test_navigation.sh
 
 ## Navigation Goal Node
 ### Sending Goals to the Navigation Stack
-The ROS navigation stack creates a path for your robot based on `Dijkstra's algorithm`, a variant of the **Uniform Cost Search algorithm**, while avoiding obstacles on its path.
+The ROS navigation stack creates a path for your robot based on **Dijkstra's algorithm**, a variant of the **Uniform Cost Search algorithm**, while avoiding obstacles on its path.
 [Tutorial](http://wiki.ros.org/navigation/Tutorials/SendingSimpleGoals) is official ROS tutorial that teaches you how to send a single goal position and orientation to the navigation stack.
 **Sample Code:**
 ```cpp
