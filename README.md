@@ -25,8 +25,8 @@ xterm  -e  " rosrun rviz rviz"
 ```
 Here, in the `launch.sh` shell script launches three terminals and issues one or multiple commands in each terminal. To save my script file and give it ***execute*** permission: `chmod +x launch.sh`. Then to launch the shell: `./launch.sh`
 
-# SLAM Testing
-shell script `test_slam.sh` that will deploy a turtlebot inside your environment, control it with keyboard commands, interface it with a SLAM package, and visualize the map in `rviz`.
+## SLAM Testing
+Shell script [`test_slam.sh`](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/scripts/test_slam.sh) that will deploy a turtlebot inside your environment, control it with keyboard commands, interface it with a SLAM package, and visualize the map in `rviz`.
 ```bash
 $ source devel/setup.bash
 $ cd src/script
