@@ -1,7 +1,5 @@
 # RoboticsND-Home-Service-Robot
-
 Home Service Robot in Kinetic ROS
-
 
 
 ## Shell Scripts
