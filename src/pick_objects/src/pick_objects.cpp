@@ -13,7 +13,8 @@ using namespace std;
 // Define a client for to send goal requests to the move_base server through a SimpleActionClient
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;
 
-class MoveBaseSequence {
+class MoveBaseSequence 
+{
 public:
     //tell the action client that we want to spin a thread by default
     MoveBaseSequence() : ac_("move_base", true), count(0) 
@@ -44,7 +45,7 @@ public:
         goal.target_pose.pose.orientation.w = 1.0;
 
         // Send the goal position and orientation for the robot to reach
-        ROS_INFO("Wait for 5.0 seconds before sending %s.\n", station_map[count].c_str());
+        ROS_INFO("Waiting for 5.0 seconds before sending %s.\n", station_map[count].c_str());
         ros::Duration(5.0).sleep();
         ROS_INFO("Now Sending %s goal!\n", station_map[count].c_str());
 
