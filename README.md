@@ -130,4 +130,6 @@ $ ./pick_objects.sh
 * [pick_objects.sh](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/scripts/pick_objects.sh) shell scripts will show the robot move as shown bottom gif.
 
 ![Navigation Goal][image2]
+[//]: # (Image References)
+
 [image2]: https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/img/Nav3.gif "Navigation Goal"
