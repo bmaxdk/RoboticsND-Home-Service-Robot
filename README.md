@@ -295,7 +295,7 @@ $ ./add_markers.sh
 [image6]: img/a6.png "img6"
 <!-- ![alt text][image3] -->
 <img src="img/b11.png" width="400"/> <img src="img/b2.png" width="400"/> 
-<img src="img/b3.png" width="400"/> <img src="img/b4.png" width="400"/> 
+<img src="img/b1.png" width="400"/> <img src="img/b4.png" width="400"/> 
 
 ## Home Service Robot
 Simulate a full home service robot capable of navigating to pick up and deliver virtual objects.
