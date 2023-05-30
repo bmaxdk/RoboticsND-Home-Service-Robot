@@ -1,5 +1,5 @@
 # RoboticsND-Home-Service-Robot
-Home Service Robot in Kinetic ROS
+Home Service Robot in Kinetic ROS has two pick up zone and one drop off zone.
 ![home_Service][image9]
 <!-- ![Localization and Navigation Testing2][image2] -->
 ![home_Service2][image10]
@@ -7,6 +7,20 @@ Home Service Robot in Kinetic ROS
 [image9]: https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/img/bb.gif "home_service"
 
 [image10]: https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/img/bb2.gif "home_Service2"
+
+
+Simulate a full home service robot capable of navigating to pick up and deliver virtual objects.
+**To launch home_service shell scripts:**
+```bash
+$ source devel/setup.bash
+$ cd src/script
+$ ./home_service.sh
+```
+* [add_markers.cpp](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/add_markers/src/add_markers.cpp) contains two markers.
+* [home_service.sh](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/scripts/add_marker.sh) shell scripts will show the markers as shown bottom gif.
+
+
+## Setup workspace
 ```bash
 $ mkdir -p ~/catkin_ws/src
 $ cd ~/catkin_ws/src
@@ -306,8 +320,6 @@ $ cd src/script
 $ ./home_service.sh
 ```
 * [add_markers.cpp](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/add_markers/src/add_markers.cpp) contains two markers.
-    * In the **rviz displays** panel, the **Marker** item that should have appeared in **Displays** panel, there should be a field called **Marker Topic**.
-    * Updated **rviz** is saved into [rvizConfig](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/rvizConfig/add_marker.rviz)
 * [home_service.sh](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/scripts/add_marker.sh) shell scripts will show the markers as shown bottom gif.
 
 <img src="img/a3.png" width="400"/> <img src="img/a4.png" width="400"/> 
