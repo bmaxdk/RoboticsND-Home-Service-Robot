@@ -286,5 +286,6 @@ $ ./add_markers.sh
 [image5]: img/a5.png "img5"
 [image6]: img/a6.png "img6"
 ![alt text][image3]
+<img src=[image3] width="425"/> <img src=[image4] width="425"/> 
 
-![alt-text-1][image3] ![alt-text-2][image4]
+<!-- ![alt-text-1][image3] ![alt-text-2][image4] -->
