@@ -283,9 +283,9 @@ $ ./add_markers.sh
 
 [image3]: img/a3.png "img3"
 [image4]: img/a4.png "img4"
-[image5]: img/a5.png "img5"
+[image5]: img/a55.png "img5"
 [image6]: img/a6.png "img6"
 ![alt text][image3]
 <img src="img/a3.png" width="400"/> <img src="img/a4.png" width="400"/> 
-<img src="img/a5.png" width="400"/> <img src="img/a6.png" width="400"/> 
+<img src="img/a55.png" width="400"/> <img src="img/a6.png" width="400"/> 
 
