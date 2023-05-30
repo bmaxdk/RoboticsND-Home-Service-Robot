@@ -1,6 +1,12 @@
 # RoboticsND-Home-Service-Robot
 Home Service Robot in Kinetic ROS
+![Localization and Navigation Testing][image9]
+<!-- ![Localization and Navigation Testing2][image2] -->
 
+<!-- [//]: # (Image References) -->
+[image9]: https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/img/bb.gif "home_service"
+![Localization and Navigation Testing][image10]
+[image9]: https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/img/bb2.gif "home_Service2"
 ```bash
 $ mkdir -p ~/catkin_ws/src
 $ cd ~/catkin_ws/src
@@ -288,7 +294,8 @@ $ ./add_markers.sh
 [image5]: img/a5.png "img5"
 [image6]: img/a6.png "img6"
 ![alt text][image3]
-
+<img src="img/b1.png" width="400"/> <img src="img/b2.png" width="400"/> 
+<img src="img/b3.png" width="400"/> <img src="img/b4.png" width="400"/> 
 
 ## Home Service Robot
 Simulate a full home service robot capable of navigating to pick up and deliver virtual objects.
