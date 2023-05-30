@@ -145,7 +145,7 @@ $ source devel/setup.bash
 $ cd src/script
 $ ./pick_objects.sh
 ```
-* [pick_objects.cpp](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/pick_objects/src/pick_objects.cpp) contains three position and stop every 5 seconds before sending each mission.
+* [pick_objects_old2.cpp](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/pick_objects/src/pick_objects_old2.cpp) contains three position and stop every 5 seconds before sending each mission.
 * [pick_objects.sh](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/scripts/pick_objects.sh) shell scripts will show the robot move as shown bottom gif.
 
 ![Navigation Goal][image2]
@@ -277,7 +277,7 @@ $ source devel/setup.bash
 $ cd src/script
 $ ./add_markers.sh
 ```
-* [add_markers.cpp](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/tree/main/src/add_markers/src) contains two markers.
+* [add_markers_old2.cpp](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/tree/main/src/add_markers/src) contains two markers.
     * In the **rviz displays** panel, the **Marker** item that should have appeared in **Displays** panel, there should be a field called **Marker Topic**.
     * Updated **rviz** is saved into [rvizConfig](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/rvizConfig/add_marker.rviz)
 * [add_marker.sh](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/scripts/add_marker.sh) shell scripts will show the markers as shown bottom gif.
@@ -301,7 +301,7 @@ $ ./home_service.sh
 * [add_markers.cpp](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/tree/main/src/add_markers/src) contains two markers.
     * In the **rviz displays** panel, the **Marker** item that should have appeared in **Displays** panel, there should be a field called **Marker Topic**.
     * Updated **rviz** is saved into [rvizConfig](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/rvizConfig/add_marker.rviz)
-* [home_service..sh](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/scripts/add_marker.sh) shell scripts will show the markers as shown bottom gif.
+* [home_service.sh](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/scripts/add_marker.sh) shell scripts will show the markers as shown bottom gif.
 
 <img src="img/a3.png" width="400"/> <img src="img/a4.png" width="400"/> 
 <img src="img/a55.png" width="400"/> <img src="img/a5.png" width="400"/> 
