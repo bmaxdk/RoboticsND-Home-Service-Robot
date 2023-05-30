@@ -305,7 +305,7 @@ $ source devel/setup.bash
 $ cd src/script
 $ ./home_service.sh
 ```
-* [add_markers.cpp](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/tree/main/src/add_markers/src) contains two markers.
+* [add_markers.cpp](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/add_markers/src/add_markers.cpp) contains two markers.
     * In the **rviz displays** panel, the **Marker** item that should have appeared in **Displays** panel, there should be a field called **Marker Topic**.
     * Updated **rviz** is saved into [rvizConfig](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/rvizConfig/add_marker.rviz)
 * [home_service.sh](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/scripts/add_marker.sh) shell scripts will show the markers as shown bottom gif.
