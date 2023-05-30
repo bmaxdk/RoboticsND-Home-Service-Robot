@@ -293,8 +293,8 @@ $ ./add_markers.sh
 [image55]: img/a55.png "img55"
 [image5]: img/a5.png "img5"
 [image6]: img/a6.png "img6"
-![alt text][image3]
-<img src="img/a3.png" width="400"/> <img src="img/b2.png" width="400"/> 
+<!-- ![alt text][image3] -->
+<img src="img/b5.png" width="400"/> <img src="img/b2.png" width="400"/> 
 <img src="img/b3.png" width="400"/> <img src="img/b4.png" width="400"/> 
 
 ## Home Service Robot
