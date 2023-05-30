@@ -4,6 +4,7 @@
 #include <std_msgs/String.h>
 #include <vector>
 #include <string>
+#include <map>
 
 using namespace std;
 
@@ -14,8 +15,8 @@ public:
     {
         marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
         waypoint_pub = n.advertise<geometry_msgs::PoseStamped>("waypoints", 1);
-        stage_sub = n.subscribe("stage", 1, &AddMarkers::stageCallback, this);
-
+        // stage_sub = n.subscribe("stage", 1, &AddMarkers::stageCallback, this);
+        stage = "First Waypoint";
         vector<vector<double>> m = {{5.0, -6.0}, {12.0, -2.0}, {0.0, 0.0}};
         
         for(auto &wp : m) 
@@ -43,36 +44,38 @@ public:
         if (waypoints.size() > 0)
             waypoint_pub.publish(waypoints[0]);
     }
-
-private:
-    ros::NodeHandle n;
-    ros::Publisher marker_pub;
-    visualization_msgs::Marker marker1, marker2;
-    ros::Publisher waypoint_pub;
-    vector<geometry_msgs::PoseStamped> waypoints;
-    ros::Subscriber stage_sub;
-
-    void stageCallback(const std_msgs::String::ConstPtr& msg)
+    ~AddMarkers()
     {
-        if (msg->data == "First Waypoint") 
+        ROS_INFO("Completed the task");
+    }
+    
+    void markerStage()
+    {
+        if (stage == "First Waypoint") 
         {
+            ROS_INFO("Wait for 5.0 seconds");
+            ros::Duration(5.0).sleep();
             marker1.action = visualization_msgs::Marker::DELETE;
             marker_pub.publish(marker1);
             ROS_INFO("First Package is picked up.");
-
+            stage = "Second Waypoint";
             waypoint_pub.publish(waypoints[1]);
 
         } 
-        else if (msg->data == "Second Waypoint") 
+        if (stage == "Second Waypoint") 
         {
+            ROS_INFO("Wait for 5.0 seconds");
+            ros::Duration(5.0).sleep();
             marker2.action = visualization_msgs::Marker::DELETE;
             marker_pub.publish(marker2);
             ROS_INFO("Second Package is picked up.");
-
+            stage = "Third Waypoint";
             waypoint_pub.publish(waypoints[2]);
         } 
-        else if (msg->data == "Third Waypoint") 
+        if (stage == "Third Waypoint") 
         {   
+            ROS_INFO("Wait for 5.0 seconds");
+            ros::Duration(5.0).sleep();
             marker1.pose.position.x = marker2.pose.position.x = waypoints[2].pose.position.x;
             marker1.pose.position.y = waypoints[2].pose.position.y +0.5;
             marker2.pose.position.y = waypoints[2].pose.position.y +1.;
@@ -83,6 +86,16 @@ private:
 
         }
     }
+
+private:
+    ros::NodeHandle n;
+    ros::Publisher marker_pub;
+    visualization_msgs::Marker marker1, marker2;
+    ros::Publisher waypoint_pub;
+    vector<geometry_msgs::PoseStamped> waypoints;
+    string stage;
+    
+    // ros::Subscriber stage_sub;
 
     void initializeMarker(visualization_msgs::Marker& marker, int id, double x, double y)
     {
@@ -139,12 +152,15 @@ private:
         }
         marker_pub.publish(marker);
     }
+
+
 };
 
 int main(int argc, char** argv)
 {
     ros::init(argc, argv, "add_markers");
     AddMarkers add_markers;
+    add_markers.markerStage();
     ros::spin();
     return 0;
 }
