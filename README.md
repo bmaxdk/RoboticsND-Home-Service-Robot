@@ -270,3 +270,21 @@ int main( int argc, char** argv )
 ```
 Make sure that frame_id is set to **map**. This is because the markers are being placed in the map frame, which is the global reference frame for the robot's environment.
 The tutorial is an excellent reference and includes a C++ node capable of drawing basic shapes like arrows, cubes, cylinders, and spheres in rviz. This will teach how to define a marker, scale it, define its position and orientation, and finally publish it to rviz. The node included in the [tutorial](http://wiki.ros.org/rviz/Tutorials/Markers%3A%20Basic%20Shapes) will publish a different shape each second at the same position and orientation.
+
+```bash
+$ source devel/setup.bash
+$ cd src/script
+$ ./add_markers.sh
+```
+* [add_markers.cpp](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/tree/main/src/add_markers/src) contains two markers.
+    * In the **rviz displays** panel, the **Marker** item that should have appeared in **Displays** panel, there should be a field called **Marker Topic**.
+    * Updated **rviz** is saved into [rvizConfig](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/rvizConfig/add_marker.rviz)
+* [add_marker.sh](https://github.com/bmaxdk/RoboticsND-Home-Service-Robot/blob/main/src/scripts/add_marker.sh) shell scripts will show the markers as shown bottom gif.
+
+[image3]: img/a3.png "img3"
+[image4]: img/a4.png "img4"
+[image5]: img/a5.png "img5"
+[image6]: img/a6.png "img6"
+![alt text][image3]
+
+![alt-text-1][image3] ![alt-text-2][image34]
