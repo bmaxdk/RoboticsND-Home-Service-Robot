@@ -11,4 +11,4 @@ sleep 6
 xterm -e "cd ${ws} && source devel/setup.bash && roslaunch turtlebot_rviz_launchers view_navigation.launch" &
 sleep 6
 
-xterm -e "cd ${ws} && source devel/setup.bash && rosrun add_markers add_markers"
+xterm -e "cd ${ws} && source devel/setup.bash && rosrun add_markers add_markers_old2"
