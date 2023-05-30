@@ -43,6 +43,10 @@ public:
         if (waypoints.size() > 0)
             waypoint_pub.publish(waypoints[0]);
     }
+    ~AddMarkers()
+    {
+    }
+  
 
 private:
     ros::NodeHandle n;
