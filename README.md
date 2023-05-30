@@ -1,7 +1,27 @@
 # RoboticsND-Home-Service-Robot
 Home Service Robot in Kinetic ROS
 
-
+```bash
+$ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/src
+$ catkin_init_workspace
+$ cd ..
+$ catkin_make
+$ sudo apt-get update
+$ cd ~/catkin_ws/src
+$ git clone https://github.com/ros-perception/slam_gmapping
+$ git clone https://github.com/turtlebot/turtlebot
+$ git clone https://github.com/turtlebot/turtlebot_interactions
+$ git clone https://github.com/turtlebot/turtlebot_simulator
+$ cd ~/catkin_ws/
+$ source devel/setup.bash
+$ rosdep -i install gmapping
+$ rosdep -i install turtlebot_teleop
+$ rosdep -i install turtlebot_rviz_launchers
+$ rosdep -i install turtlebot_gazebo
+$ catkin_make
+$ source devel/setup.bash
+```
 ## Shell Scripts
 A ***shell script*** is a file containing a series of commands and could be executed. Use shell scripts when developing robotic software with different packages to avoid getting harder to track errors and bugs generated from different nodes. After you create a shell script file to launch one or many nodes each in separate terminals, you will have the power to track the output of different nodes and keep the convenience of running a single command to launch all nodes.
 
