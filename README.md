@@ -1,4 +1,5 @@
-# RoboticsND-Home-Service-Robot
+<h1 align="center">RoboticsND-Home-Service-Robot</h1>
+
 Home Service Robot in Kinetic ROS has two pick up zone and one drop off zone.
 ![home_Service][image9]
 <!-- ![Localization and Navigation Testing2][image2] -->
